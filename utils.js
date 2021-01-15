@@ -2,6 +2,7 @@ const { tobase64, tobinary } = require('./lookup.js');
 const MinHeap = require('./minheap.js');
 
 function dec2bin(dec){
+
     let bin = (dec >>> 0).toString(2);
     let padding = '';
 
@@ -79,7 +80,10 @@ function getFrequency(string) {
     return freqArr;
 };
 
-function createEncoder(freqArr){
+function createEncoder(train){
+
+    let freqArr = getFrequency(train);
+
     //create min heap structure
 
     let Heap =  new MinHeap();

@@ -1,56 +1,27 @@
 // Huffman encoder for shorter urls
 // Author: Mariano L. Acosta
 
-const config = require('./config.js');
+const { train, test } = require('./dataset.js');
+const { decodeConfig , encodeConfig, createEncoder } = require('./utils.js');
 
-const { getFrequency, decodeConfig , encodeConfig, createEncoder } = require('./utils.js')
+//create encoder
 
-//get frequencies
+let Encoder = createEncoder(train);
 
-let freqArr = getFrequency(config);
+//create encoded base64 stream
 
+let encodedParam = encodeConfig(test.trim(),Encoder)
 
-let Encoder = createEncoder(freqArr);
+let buff = new Buffer(test);
 
-const test = `[SERVICE]
-    flush 	1
-    log_level info
-[INPUT]
-    name  	dummy
-    dummy 	{"name": "Fluent Bit", "year": 2020, "color": "blue"}
-    tag   	var.log.containers.0.log
-[INPUT]
-    Name  	dummy
-    Dummy 	{"name": "Fluent Bit", "year": 2019, "color": "green"}
-    Tag   	var.log.containers.1.log
-[FILTER]
-    name  	grep
-    match 	*
-    regex 	$color ^blue$
-[OUTPUT]
-    Name  	stdout
-    Match 	*
-    Format	json_lines
-[OUTPUT]
-    name              	azure_blob
-    match             	*
-    account_name      	HIDDEN
-    shared_key        	HIDDEN
-    path              	kubernetes/$color
-    container_name    	logs
-    auto_create_container on
-    tls               	off
-    blob_type         	appendblob`
+console.log('original:\n');
+console.log(buff.toString('base64'),'\n');
+
+console.log('compressed:\n');
+console.log(encodedParam,'\n');
+//retrieve config from encoded param
+
+let decodConfig = decodeConfig(encodedParam,Encoder)
 
 
-//create encoded bitstream
-
-let encodedParam = encodeConfig(test,Encoder)
-
-console.log(encodedParam)
-
-//decode 
-
-console.log(decodeConfig(encodedParam,Encoder))
-
-
+console.log((1 - encodedParam.length/buff.toString('base64').length)*100);
