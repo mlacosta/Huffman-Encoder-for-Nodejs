@@ -12,8 +12,8 @@ Convert any kind of String into a url-friendly compressed parameter using Huffma
 
 ## Parameters:
 
-- ### Train (string): Training set that is used to create the encoder. This is where algorithm gets the frequency for each char. 
-- ### Test (string): String that you want to encode.
+- **Train (string)**: Training set that is used to create the encoder. This is where algorithm gets the frequency for each char. 
+- **Test (string)**: String that you want to encode.
 
 ## Example:
 
