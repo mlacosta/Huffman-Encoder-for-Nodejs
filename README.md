@@ -2,7 +2,7 @@
 ## Author: Mariano L. Acosta
 
 # Description
-Convert any kind of String into a url-friendly compressed parameter using Huffman Encoding.
+Convert any kind of String into a url-friendly parameter using Huffman Encoding.
 
 # Installation
 
