@@ -14,14 +14,18 @@ let encodedParam = encodeConfig(test.trim(),Encoder)
 
 let buff = new Buffer(test);
 
-console.log('original:\n');
-console.log(buff.toString('base64'),'\n');
+//console.log('original:\n');
+//console.log(buff.toString('base64'),'\n');
 
-console.log('compressed:\n');
-console.log(encodedParam,'\n');
+//console.log('compressed:\n');
+//console.log(encodedParam,'\n');
 //retrieve config from encoded param
 
 let decodConfig = decodeConfig(encodedParam,Encoder)
 
 
-console.log((1 - encodedParam.length/buff.toString('base64').length)*100);
+//console.log((1 - encodedParam.length/buff.toString('base64').length)*100);
+
+module.exports = {
+    createEncoder,encodeConfig,decodConfig
+}
