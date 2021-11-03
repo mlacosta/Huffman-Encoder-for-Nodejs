@@ -1,33 +1,46 @@
-# Huffman-URL-Compressor-for-Nodejs
-## Author: Mariano L. Acosta
+<p align="center">
+  <h3 align="center">Template for typescript applications</h3>
 
-# Description
-Convert any kind of String into a url-friendly parameter using Huffman Encoding.
+  <p align="center">
+     ⚙ Template repository for typescript applications meant to run in node ⚙
+    <br />
+    <a href="https://github.com/gagoar/ts-node-template#table-of-contents"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/gagoar/ts-node-template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/gagoar/ts-node-template/issues">Request Feature</a>
+  </p>
+</p>
 
-# Installation
+## Table of Contents
 
-        npm install --save huffman-url-compressor
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-# Usage
+<!-- CONTRIBUTING -->
 
-## Parameters:
+### Built With
 
-- **Train (string)**: Training set used to create the encoder. This is where the algorithm gets the frequency for each char. 
-- **Test (string)**: String that you want to encode.
+- [ncc](https://github.com/vercel/ncc/)
+- [jest](https://github.com/facebook/jest)
+- [ora](https://github.com/sindresorhus/ora)
+- [commander](https://github.com/tj/commander.js/)
+- [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
 
-## Example:
+## Contributing
 
-        import {createEncoder, encodeConfig, decodeConfig} from 'huffman-url-compressor';
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated **greatly appreciated**.
 
-        //create encoder
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-        let Encoder = createEncoder(train);
+<!-- LICENSE -->
 
-        //create a base64 encoded stream
+## License
 
-        let encodedParam = encodeConfig(test,Encoder)
-        
-        //retrieve the original param 
-
-        let decodParam= decodeConfig(encodedParam,Encoder)
-
+Distributed under the MIT License. See `LICENSE` for more information.
