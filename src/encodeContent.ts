@@ -6,7 +6,6 @@ const CODE_REGEX = /.{1,6}/g;
 
 export function encodeContent(content: string, encoder: HNode): string {
   let code = [...content.trim()].reduce((memo, char) => memo + getBitForString(char, encoder), '');
-  console.log(code);
   code += Array((6 - (code.length % 6)) % 6)
     .fill('0')
     .join('');

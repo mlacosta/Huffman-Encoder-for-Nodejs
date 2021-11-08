@@ -13,7 +13,8 @@
     "lint": "eslint src/* --ext .ts",
     "build-types": "tsc --emitDeclarationOnly --outDir types",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "release": "npm run build && npm publish"
+    "release": "npm run build && npm publish",
+    "test:nocoverage": "jest --no-coverage"
   },
   "engines": {
     "node": ">10.0.0"
