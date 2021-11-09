@@ -2,6 +2,7 @@
   "include": ["src", "test", "index.ts"],
   "compilerOptions": {
     "target": "es2017",
+    "checkJs": false,
     "module": "es6",
     "lib": ["dom", "esnext"],
     "emitDecoratorMetadata": true,
@@ -17,7 +18,7 @@
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,

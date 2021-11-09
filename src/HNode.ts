@@ -1,8 +1,8 @@
 export interface Props {
   freq: number;
   symbol: string;
-  left?: HNode;
-  right?: HNode;
+  left: HNode | null;
+  right: HNode | null;
 }
 
 export class HNode {
@@ -11,11 +11,11 @@ export class HNode {
     this.props = props;
   }
 
-  set<T extends keyof Props>(prop: T, value: Props[T]) {
+  set<T extends keyof Props>(prop: T, value: Props[T]): void {
     this.props[prop] = value;
   }
 
-  get<T extends keyof Props>(prop: T) {
+  get<T extends keyof Props>(prop: T): Props[T] {
     return this.props[prop];
   }
 }

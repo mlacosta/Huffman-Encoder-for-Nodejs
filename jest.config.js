@@ -14,7 +14,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testURL: 'http://localhost',
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
-  testMatch: ['**/*.(spec|test).{ts,tsx}'],
+  testMatch: ['**/*.(spec|test).{ts,tsx,js}'],
   collectCoverage: true,
   collectCoverageFrom: ['config/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}', '!src/utils/guards.ts', '!src/bin/cli.ts'],
   coverageDirectory: './coverage/',

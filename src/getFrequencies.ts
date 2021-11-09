@@ -11,6 +11,25 @@ export function getFrequencies(content: string): getFrequenciesReturn {
   }, {} as Record<string, number>);
 
   return Object.keys(frequencies).map((symbol) => ({ symbol, freq: frequencies[symbol] }));
-
 }
 
+export function getFrequency(content: string): getFrequenciesReturn {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const freq = {} as any;
+  for (let i = 0; i < content.length; i++) {
+    const character = content.charAt(i);
+    if (freq[character]) {
+      freq[character]++;
+    } else {
+      freq[character] = 1;
+    }
+  }
+
+  const freqArr = [];
+
+  for (const a in freq) {
+    freqArr.push({ symbol: a, freq: freq[a] });
+  }
+
+  return freqArr;
+}
