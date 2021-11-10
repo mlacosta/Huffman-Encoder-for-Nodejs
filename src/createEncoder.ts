@@ -1,5 +1,5 @@
 import { HNode } from './HNode';
-import { getFrequencies, getFrequenciesReturn } from './getFrequencies';
+import { getFrequencies, GetFrequenciesReturn } from './getFrequencies';
 import { MinHeap } from './minHeap';
 
 type Frequency = {
@@ -7,7 +7,7 @@ type Frequency = {
   symbol: string;
 };
 
-export const createHeap = (frequencies: getFrequenciesReturn): MinHeap =>
+export const createHeap = (frequencies: GetFrequenciesReturn): MinHeap =>
   frequencies.reduce((heapMem, { freq, symbol }: Frequency) => {
     heapMem.insert(new HNode({ freq, symbol, left: null, right: null }));
     return heapMem;
@@ -22,19 +22,23 @@ export function createEncoder(trainingSet: string): HNode {
 
   //create encoder
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  for (const _ in frequencies) {
+  for (let i = 0; i < frequencies.length - 1; i++) {
     const x = heap.remove(); //x and y should be instantiated sequentially
     const y = heap.remove();
 
-    if (x && y) {
-      const hNode = new HNode({
-        left: x,
-        right: y,
-        freq: x.get('freq') + y.get('freq'),
-        symbol: x.get('symbol') + y.get('symbol'),
-      });
-      heap.insert(hNode);
-    }
+    const xFreq = x?.get('freq') || 0;
+    const yFreq = y?.get('freq') || 0;
+
+    const xSymbol = x?.get('symbol') || '';
+    const ySymbol = y?.get('symbol') || '';
+
+    const hNode = new HNode({
+      left: x,
+      right: y,
+      freq: xFreq + yFreq,
+      symbol: xSymbol + ySymbol,
+    });
+    heap.insert(hNode);
   }
 
   return heap.heap[1];

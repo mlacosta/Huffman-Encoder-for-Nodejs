@@ -1,9 +1,9 @@
-export type getFrequenciesReturn = {
+export type GetFrequenciesReturn = {
   symbol: string;
   freq: number;
 }[];
 
-export function getFrequencies(content: string): getFrequenciesReturn {
+export function getFrequencies(content: string): GetFrequenciesReturn {
   const frequencies = content.split('').reduce((memo, char) => {
     const increment = memo[char] ? memo[char] + 1 : 1;
     memo[char] = increment;
@@ -13,7 +13,7 @@ export function getFrequencies(content: string): getFrequenciesReturn {
   return Object.keys(frequencies).map((symbol) => ({ symbol, freq: frequencies[symbol] }));
 }
 
-export function getFrequency(content: string): getFrequenciesReturn {
+export function getFrequency(content: string): GetFrequenciesReturn {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const freq = {} as any;
   for (let i = 0; i < content.length; i++) {

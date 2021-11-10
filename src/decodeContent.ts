@@ -1,12 +1,9 @@
 import { decodeMsg } from './decodeMsg';
-import { decimalToBinary } from './decimalToBinary';
-import { DECIMAL } from './constants';
 import { HNode } from './HNode';
+import { textToBinary } from './textToBinary';
 
-export function decodeContent(content: string, encoder: HNode) {
-  let decodedText = [...content].reduce((memo, val) => {
-    return [...memo, ...decimalToBinary(DECIMAL[val])];
-  }, [] as ReturnType<typeof decimalToBinary>);
+export function decodeContent(content: string, encoder: HNode): string {
+  const decodedText = textToBinary(content);
 
   return decodeMsg(decodedText, encoder);
 }

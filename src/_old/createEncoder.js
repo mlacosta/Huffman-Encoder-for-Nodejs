@@ -1,6 +1,6 @@
-import { tobase64, tobinary } from './lookup.js';
+const { tobase64, tobinary } = require('./lookup.js');
 
-import MinHeap from './minheap.js';
+const MinHeap = require('./minheap.js');
 
 function dec2bin(dec) {
   let bin = (dec >>> 0).toString(2);
@@ -13,7 +13,7 @@ function dec2bin(dec) {
   return padding + bin;
 }
 
-export function decodeMsg(stream, Graph) {
+function decodeMsg(stream, Graph) {
   let currentNode = Graph;
   let message = '';
 
@@ -31,7 +31,7 @@ export function decodeMsg(stream, Graph) {
   return message;
 }
 
-export class Node {
+class Node {
   constructor(freq, symbol, left, right) {
     this.freq = freq;
     this.symbol = symbol;
@@ -55,7 +55,7 @@ export class Node {
   }
 }
 
-export function getFrequency(string) {
+function getFrequency(string) {
   var freq = {};
   for (var i = 0; i < string.length; i++) {
     var character = string.charAt(i);
@@ -75,7 +75,7 @@ export function getFrequency(string) {
   return freqArr;
 }
 
-export function createEncoder(train) {
+function createEncoder(train) {
   let freqArr = getFrequency(train);
 
   //create min heap structure
@@ -100,7 +100,7 @@ export function createEncoder(train) {
   return Heap.heap[1];
 }
 
-export function getBitstring(char, Graph) {
+function getBitstring(char, Graph) {
   let isLeftTerminal = !(Graph.left.left && Graph.left.right);
   let isRightTerminal = !(Graph.right.left && Graph.right.right);
 
@@ -119,7 +119,7 @@ export function getBitstring(char, Graph) {
   }
 }
 
-export function encodeConfig(config, encoder) {
+function encodeConfig(config, encoder) {
   let code = '';
   [...config].forEach((val) => (code = code + getBitstring(val, encoder)));
 
@@ -132,10 +132,12 @@ export function encodeConfig(config, encoder) {
   return encodedParam.reduce((acc, curr) => acc + curr);
 }
 
-export function decodeConfig(param, encoder) {
+function decodeConfig(param, encoder) {
   let decodedText = [...param].map((val) => dec2bin(tobinary[val]));
   return decodeMsg(
     decodedText.reduce((acc, cur) => acc + cur),
     encoder
   );
 }
+
+module.exports = { createEncoder, decodeMsg, dec2bin, decodeConfig };

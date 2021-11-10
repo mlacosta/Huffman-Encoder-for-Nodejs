@@ -6,13 +6,15 @@ export interface Props {
 }
 
 export class HNode {
-  props: Props;
+  props: Props
   constructor(props: Props) {
     this.props = props;
   }
 
   set<T extends keyof Props>(prop: T, value: Props[T]): void {
-    this.props[prop] = value;
+    if (this.props) {
+      this.props[prop] = value;
+    }
   }
 
   get<T extends keyof Props>(prop: T): Props[T] {

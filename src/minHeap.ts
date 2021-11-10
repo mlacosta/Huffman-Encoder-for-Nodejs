@@ -1,20 +1,20 @@
 
-import type { HNode } from "./HNode";
+import type { HNode } from './HNode';
 
 export class MinHeap {
-    heap: HNode[] 
- 
+    heap: HNode[]
+
     constructor() {
         /* Initialing the array heap and adding a dummy element at index 0 */
         this.heap = []
     }
 
-    getMin() {
+    getMin(): HNode {
         /* Accessing the min element at index 1 in the heap array */
         return this.heap[1]
     }
 
-    insert(node:HNode) {
+    insert(node: HNode): void {
 
         /* Inserting the new node at the end of the heap array */
         this.heap.push(node)
@@ -34,9 +34,9 @@ export class MinHeap {
         }
     }
 
-    remove() {
+    remove(): HNode | null {
         /* Smallest element is at the index 1 in the heap array */
-        let smallest = this.heap[1]
+        const smallest = this.heap[1]
 
         /* When there are more than two elements in the array, we put the right most element at the first position
             and start comparing nodes with the child nodes
@@ -78,9 +78,9 @@ export class MinHeap {
         else if (this.heap.length === 2) {
             this.heap.splice(1, 1)
         } else {
-            return null
+            return null;
         }
 
-        return smallest
+        return smallest;
     }
 }
