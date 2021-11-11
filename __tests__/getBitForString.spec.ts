@@ -8,7 +8,7 @@ describe('bitForString', () => {
     const sample1 = getBitForString('x', encoder);
     const sample2 = getBitstring('x', encoder);
     expect(sample1).toBe(sample2);
-    expect(sample1).toMatchInlineSnapshot('"000010111"');
-    expect(sample2).toMatchInlineSnapshot('"000010111"');
+    expect(sample1).toMatchInlineSnapshot('"00010011"');
+    expect(sample2).toMatchInlineSnapshot('"00010011"');
   });
 });

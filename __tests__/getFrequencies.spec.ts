@@ -1,382 +1,118 @@
-import { createHeap, oldCreateHeap } from '../src';
-import { getFrequency, getFrequencies } from '../src/getFrequencies';
+import { getFrequencies } from '../src/getFrequencies';
 
-import { dataset1 } from '../__mocks__/dataset';
+import { dataset2 } from '../__mocks__/dataset2';
 describe('Frequencies', () => {
   it('calculates each char frequencies', async () => {
-    expect(getFrequency(dataset1)).toMatchObject(getFrequencies(dataset1));
-  });
-
-  it.only('createHeap', async () => {
-    const frequencies = getFrequency(dataset1);
-    expect(createHeap(frequencies)).toMatchObject(oldCreateHeap(frequencies));
-  });
-
-
-  it('calculates each char frequencies', async () => {
-    const frequencies = getFrequencies(dataset1);
+    const frequencies = getFrequencies(dataset2);
     expect(frequencies).toMatchInlineSnapshot(`
       Array [
         Object {
-          "freq": 139,
-          "symbol": "0",
-        },
-        Object {
-          "freq": 80,
-          "symbol": "1",
-        },
-        Object {
-          "freq": 74,
-          "symbol": "2",
-        },
-        Object {
-          "freq": 40,
-          "symbol": "3",
-        },
-        Object {
-          "freq": 53,
-          "symbol": "4",
-        },
-        Object {
-          "freq": 29,
-          "symbol": "5",
-        },
-        Object {
-          "freq": 21,
-          "symbol": "6",
-        },
-        Object {
-          "freq": 25,
-          "symbol": "7",
-        },
-        Object {
-          "freq": 36,
-          "symbol": "8",
-        },
-        Object {
-          "freq": 12,
-          "symbol": "9",
-        },
-        Object {
-          "freq": 135,
-          "symbol": "[",
-        },
-        Object {
-          "freq": 323,
-          "symbol": "S",
-        },
-        Object {
-          "freq": 169,
-          "symbol": "E",
-        },
-        Object {
-          "freq": 114,
-          "symbol": "R",
-        },
-        Object {
-          "freq": 29,
-          "symbol": "V",
-        },
-        Object {
-          "freq": 165,
-          "symbol": "I",
-        },
-        Object {
-          "freq": 54,
-          "symbol": "C",
-        },
-        Object {
-          "freq": 135,
-          "symbol": "]",
-        },
-        Object {
-          "freq": 907,
-          "symbol": "
-      ",
-        },
-        Object {
-          "freq": 8627,
-          "symbol": " ",
-        },
-        Object {
-          "freq": 149,
-          "symbol": "F",
-        },
-        Object {
-          "freq": 525,
-          "symbol": "l",
-        },
-        Object {
-          "freq": 354,
-          "symbol": "u",
-        },
-        Object {
-          "freq": 717,
-          "symbol": "s",
-        },
-        Object {
-          "freq": 176,
-          "symbol": "h",
-        },
-        Object {
-          "freq": 117,
-          "symbol": "D",
-        },
-        Object {
-          "freq": 724,
-          "symbol": "a",
-        },
-        Object {
-          "freq": 1488,
-          "symbol": "e",
-        },
-        Object {
-          "freq": 434,
-          "symbol": "m",
-        },
-        Object {
-          "freq": 684,
-          "symbol": "o",
-        },
-        Object {
-          "freq": 610,
-          "symbol": "n",
-        },
-        Object {
-          "freq": 292,
-          "symbol": "f",
-        },
-        Object {
-          "freq": 175,
-          "symbol": "L",
-        },
-        Object {
-          "freq": 308,
-          "symbol": "g",
-        },
-        Object {
-          "freq": 518,
-          "symbol": "_",
-        },
-        Object {
-          "freq": 182,
-          "symbol": "v",
-        },
-        Object {
-          "freq": 590,
-          "symbol": "i",
-        },
-        Object {
-          "freq": 87,
-          "symbol": "H",
-        },
-        Object {
-          "freq": 413,
-          "symbol": "T",
-        },
-        Object {
-          "freq": 223,
-          "symbol": "P",
-        },
-        Object {
-          "freq": 749,
-          "symbol": "r",
-        },
-        Object {
-          "freq": 141,
-          "symbol": "O",
-        },
-        Object {
-          "freq": 896,
-          "symbol": "t",
-        },
-        Object {
-          "freq": 362,
-          "symbol": ".",
-        },
-        Object {
-          "freq": 223,
-          "symbol": "N",
-        },
-        Object {
-          "freq": 189,
-          "symbol": "U",
-        },
-        Object {
-          "freq": 432,
-          "symbol": "c",
-        },
-        Object {
-          "freq": 232,
-          "symbol": "p",
-        },
-        Object {
-          "freq": 332,
-          "symbol": "d",
-        },
-        Object {
-          "freq": 84,
-          "symbol": "*",
-        },
-        Object {
-          "freq": 165,
-          "symbol": "k",
-        },
-        Object {
-          "freq": 173,
-          "symbol": "M",
-        },
-        Object {
-          "freq": 160,
-          "symbol": "-",
-        },
-        Object {
-          "freq": 176,
-          "symbol": "y",
-        },
-        Object {
-          "freq": 141,
-          "symbol": "/",
-        },
-        Object {
-          "freq": 197,
-          "symbol": "b",
-        },
-        Object {
-          "freq": 43,
-          "symbol": "B",
-        },
-        Object {
-          "freq": 66,
-          "symbol": "Y",
-        },
-        Object {
-          "freq": 173,
+          "freq": 1,
           "symbol": "=",
         },
         Object {
-          "freq": 65,
-          "symbol": "K",
+          "freq": 172,
+          "symbol": "i",
         },
         Object {
-          "freq": 72,
-          "symbol": "x",
+          "freq": 179,
+          "symbol": "n",
         },
         Object {
-          "freq": 24,
-          "symbol": "#",
+          "freq": 97,
+          "symbol": "d",
         },
         Object {
-          "freq": 39,
-          "symbol": "A",
+          "freq": 195,
+          "symbol": "o",
         },
         Object {
-          "freq": 23,
-          "symbol": "w",
+          "freq": 197,
+          "symbol": "a",
         },
         Object {
-          "freq": 25,
-          "symbol": "'",
+          "freq": 274,
+          "symbol": "e",
         },
         Object {
-          "freq": 44,
-          "symbol": "$",
+          "freq": 180,
+          "symbol": "s",
         },
         Object {
-          "freq": 53,
-          "symbol": "{",
+          "freq": 30,
+          "symbol": "b",
         },
         Object {
-          "freq": 52,
-          "symbol": "}",
+          "freq": 57,
+          "symbol": "u",
         },
         Object {
-          "freq": 1,
-          "symbol": "q",
-        },
-        Object {
-          "freq": 13,
-          "symbol": "z",
-        },
-        Object {
-          "freq": 15,
-          "symbol": "<",
+          "freq": 224,
+          "symbol": "t",
         },
         Object {
           "freq": 16,
-          "symbol": ">",
+          "symbol": "v",
         },
         Object {
-          "freq": 91,
-          "symbol": ":",
+          "freq": 95,
+          "symbol": "l",
         },
         Object {
-          "freq": 22,
-          "symbol": ",",
+          "freq": 37,
+          "symbol": "y",
+        },
+        Object {
+          "freq": 40,
+          "symbol": "g",
+        },
+        Object {
+          "freq": 50,
+          "symbol": "m",
+        },
+        Object {
+          "freq": 155,
+          "symbol": "r",
+        },
+        Object {
+          "freq": 23,
+          "symbol": "k",
         },
         Object {
           "freq": 7,
-          "symbol": "W",
-        },
-        Object {
-          "freq": 7,
-          "symbol": "G",
-        },
-        Object {
-          "freq": 19,
           "symbol": "j",
         },
         Object {
+          "freq": 43,
+          "symbol": "f",
+        },
+        Object {
+          "freq": 68,
+          "symbol": "c",
+        },
+        Object {
+          "freq": 47,
+          "symbol": "w",
+        },
+        Object {
+          "freq": 142,
+          "symbol": "h",
+        },
+        Object {
+          "freq": 49,
+          "symbol": "p",
+        },
+        Object {
           "freq": 2,
-          "symbol": "X",
+          "symbol": "q",
         },
         Object {
-          "freq": 56,
-          "symbol": "\\"",
-        },
-        Object {
-          "freq": 21,
-          "symbol": "|",
-        },
-        Object {
-          "freq": 48,
-          "symbol": "%",
-        },
-        Object {
-          "freq": 21,
-          "symbol": "	",
-        },
-        Object {
-          "freq": 11,
-          "symbol": "^",
-        },
-        Object {
-          "freq": 6,
-          "symbol": "@",
-        },
-        Object {
-          "freq": 14,
-          "symbol": "(",
-        },
-        Object {
-          "freq": 15,
-          "symbol": "?",
+          "freq": 4,
+          "symbol": "z",
         },
         Object {
           "freq": 3,
-          "symbol": "+",
-        },
-        Object {
-          "freq": 14,
-          "symbol": ")",
-        },
-        Object {
-          "freq": 2,
-          "symbol": "Z",
-        },
-        Object {
-          "freq": 10,
-          "symbol": "\\\\",
+          "symbol": "x",
         },
       ]
     `);

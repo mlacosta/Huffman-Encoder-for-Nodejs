@@ -79,6 +79,7 @@ function createEncoder(train) {
   let freqArr = getFrequency(train);
 
   //create min heap structure
+  debugger;
 
   let Heap = new MinHeap();
 
@@ -140,4 +141,4 @@ function decodeConfig(param, encoder) {
   );
 }
 
-module.exports = { createEncoder, decodeMsg, dec2bin, decodeConfig };
+module.exports = { createEncoder, decodeMsg, dec2bin, decodeConfig, encodeConfig };

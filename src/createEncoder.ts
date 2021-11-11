@@ -1,13 +1,9 @@
 import { HNode } from './HNode';
-import { getFrequencies, GetFrequenciesReturn } from './getFrequencies';
+import { getFrequencies } from './getFrequencies';
+import type { Frequency } from './getFrequencies';
 import { MinHeap } from './minHeap';
 
-type Frequency = {
-  freq: number;
-  symbol: string;
-};
-
-export const createHeap = (frequencies: GetFrequenciesReturn): MinHeap =>
+export const createHeap = (frequencies: Frequency[]): MinHeap =>
   frequencies.reduce((heapMem, { freq, symbol }: Frequency) => {
     heapMem.insert(new HNode({ freq, symbol, left: null, right: null }));
     return heapMem;
@@ -26,11 +22,11 @@ export function createEncoder(trainingSet: string): HNode {
     const x = heap.remove(); //x and y should be instantiated sequentially
     const y = heap.remove();
 
-    const xFreq = x?.get('freq') || 0;
-    const yFreq = y?.get('freq') || 0;
+    const xFreq = x.get('freq');
+    const yFreq = y.get('freq');
 
-    const xSymbol = x?.get('symbol') || '';
-    const ySymbol = y?.get('symbol') || '';
+    const xSymbol = x.get('symbol');
+    const ySymbol = y.get('symbol');
 
     const hNode = new HNode({
       left: x,
