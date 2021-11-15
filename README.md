@@ -89,7 +89,7 @@ Then, we can encode it further using a [base64](https://en.wikipedia.org/wiki/Ba
 
 In this case, the symbol `=` is used for zero-padding by convention.
 
-Note this way of encoding could be served as a binary tree where each leaf represents a letter and its frequency. More generally, each node´s parent contains the summation of its children's frequency and the combination of their symbols. Starting from the root, one could simply make a symbol search and output a `0` or `1` based on if you moved to the left or right respectively.
+Note this way of encoding could be served as a binary tree where each leaf represents a letter and its frequency. More generally, each node's parent contains the summation of its children's frequency and the combination of their symbols. Starting from the root, one could simply make a symbol search and output a `0` or `1` based on if you moved to the left or right respectively.
 
 ![](https://i.imgur.com/QM2laV5.jpg)
 
@@ -104,7 +104,7 @@ First, we need to generate a node for each one of the letters. We can use a data
 }
 ```
 
-Next, we combine all the nodes in a tree-like structure using a greedy algorithm that chooses between the least frequent symbol and merges them. In our example, we start with:
+Next, we combine all the nodes in a tree-like structure using a greedy algorithm that chooses between the least two frequent symbols and merges them. In our example, we start with:
 
 ```
 {
