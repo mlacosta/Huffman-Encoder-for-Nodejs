@@ -24,23 +24,3 @@ export function getBitForString(char: string, graph: HNode | null): string | nul
 
   return '';
 }
-
-export function getBitstring(char: string, Graph: HNode | null): string | null {
-  const isLeftTerminal = !(Graph?.get('left')?.get('left') && Graph?.get('left')?.get('right'));
-  const isRightTerminal = !(Graph?.get('right')?.get('left') && Graph?.get('right')?.get('left'));
-
-  if (Graph?.get('left')?.get('symbol')?.includes(char)) {
-    if (isLeftTerminal) {
-      return '0';
-    } else {
-      return '0' + getBitstring(char, Graph.get('left'));
-    }
-  } else if (Graph?.get('right')?.get('symbol')?.includes(char)) {
-    if (isRightTerminal) {
-      return '1';
-    } else {
-      return '1' + getBitstring(char, Graph.get('right'));
-    }
-  }
-  return null;
-}
