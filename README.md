@@ -18,6 +18,7 @@
 - [Getting Started](#getting-started)
 - [Motivation](#motivation)
 - [Huffman Compression](#huffman-compression)
+- [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
 
