@@ -2,13 +2,13 @@
   <h3 align="center">Huffman URL Compressor</h3>
 
   <p align="center">
-     ⚙ Template repository for typescript applications meant to run in node ⚙
+     ⚙ Convert any kind of String into a url-friendly parameter using Huffman Encoding ⚙
     <br />
-    <a href="https://github.com/gagoar/ts-node-template#table-of-contents"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/mlacosta/huffman-url-compressor#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/gagoar/ts-node-template/issues">Report Bug</a>
+    <a href="https://github.com/mlacosta/huffman-url-compressor/issues">Report Bug</a>
     ·
-    <a href="https://github.com/gagoar/ts-node-template/issues">Request Feature</a>
+    <a href="https://github.com/mlacosta/huffman-url-compressor/issues">Request Feature</a>
   </p>
 </p>
 
