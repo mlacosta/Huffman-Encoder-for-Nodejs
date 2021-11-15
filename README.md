@@ -153,7 +153,7 @@ We save 26,67% of space from our original case.
 
 `compression ratio (CR in %) = 11/15 x 100% = 73,34%`
 
-`space saved = (1 - CR) x 100% = 26,67 %`
+`saved space = (1 - CR) x 100% = 26,67 %`
 
 Later we can introduce base64 encoding:
 
